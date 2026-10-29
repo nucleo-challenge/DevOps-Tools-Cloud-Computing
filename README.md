@@ -63,7 +63,8 @@ az vm open-port --resource-group rg-nucleo-sprint1 --name vm-nucleo-api --port 8
 ```bash
 ssh <RM>@<IP_PUBLICO_DA_VM>
 git clone https://github.com/nucleo-challenge/DevOps-Tools-Cloud-Computing.git
-cd DevOps-Tools-Cloud-Computingcp .env.example .env
+cd DevOps-Tools-Cloud-Computing
+cp .env.example .env
 nano .env        # DB_URL, DB_USERNAME e DB_PASSWORD do Oracle
 chmod +x setup-app.sh
 ./setup-app.sh
