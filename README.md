@@ -123,8 +123,6 @@ chmod +x cleanup.sh
 
 ## Como Docker e Cloud Computing podem ser utilizados na solução proposta pelo grupo?
 
-<!-- RASCUNHO para o grupo revisar -->
-
 O Núcleo é um app educativo que precisa estar disponível para escolas e estudantes em qualquer lugar, sem depender da máquina de quem desenvolveu. O **Docker** resolve isso empacotando a API Java com tudo o que ela precisa (JRE 25, dependências e configuração) em uma imagem. A mesma imagem roda igual no notebook do desenvolvedor, na homologação e na nuvem, o que elimina o problema do "na minha máquina funciona" e deixa o deploy repetível. O Dockerfile multi-stage gera uma imagem enxuta, a execução com usuário não-root reduz a superfície de ataque, e as credenciais do banco entram só na execução, sem ficar gravadas na imagem.
 
 A **Cloud Computing** (Microsoft Azure) fornece a infraestrutura sob demanda: em poucos minutos o grupo cria uma VM com IP público acessível pela internet, sem comprar servidor. Como tudo é criado por scripts com Azure CLI (Infraestrutura como Código), o ambiente pode ser recriado ou apagado a qualquer momento, e o grupo paga só pelo tempo de uso. Em períodos de maior acesso, como campanhas em escolas, a mesma abordagem permite aumentar o tamanho da VM ou subir novas instâncias do container. Assim, a combinação dos dois deixa a solução portátil, escalável e com custo controlado.
